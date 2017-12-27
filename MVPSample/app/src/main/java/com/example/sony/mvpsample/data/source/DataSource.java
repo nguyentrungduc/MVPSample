@@ -15,7 +15,7 @@ import rx.Observable;
 
 public interface DataSource {
 
-    interface UserLocalDataSource extends BaseLocalDataSource {
+    interface MovieLocalDataSource extends BaseLocalDataSource {
 
         Observable<Void> insertMovie(@NonNull Movie movie);
 
@@ -31,7 +31,7 @@ public interface DataSource {
     }
 
 
-    interface UserRemoteDataSource {
+    interface MovieRemoteDataSource {
         Observable<List<Movie>> searchPopularMovie(String key,String language,String page);
     }
 }

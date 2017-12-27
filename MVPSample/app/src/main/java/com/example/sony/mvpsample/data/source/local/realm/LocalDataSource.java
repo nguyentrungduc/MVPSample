@@ -17,7 +17,7 @@ import rx.functions.Action2;
  * Created by Sony on 12/22/2017.
  */
 
-public class LocalDataSource implements DataSource.UserLocalDataSource{
+public class LocalDataSource implements DataSource.MovieLocalDataSource{
 
     RealmAPI mRealmApi;
     @Override

@@ -15,11 +15,11 @@ import rx.Observable;
  */
 
 public class MovieRepositoryimpl implements MovieRepository {
-    private DataSource.UserLocalDataSource mLocalDataSource;
-    private DataSource.UserRemoteDataSource mRemoteDataSource;
+    private DataSource.MovieLocalDataSource mLocalDataSource;
+    private DataSource.MovieRemoteDataSource mRemoteDataSource;
 
     public MovieRepositoryimpl(LocalDataSource localDataSource,
-                               DataSource.UserRemoteDataSource remoteDataSource) {
+                               DataSource.MovieRemoteDataSource remoteDataSource) {
         mLocalDataSource = localDataSource;
         mRemoteDataSource = remoteDataSource;
     }

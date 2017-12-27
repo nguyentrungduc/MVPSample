@@ -8,6 +8,7 @@ import java.util.List;
 import io.realm.RealmList;
 import io.realm.RealmModel;
 import io.realm.RealmObject;
+import io.realm.annotations.Ignore;
 
 /**
  * Created by Sony on 12/22/2017.
@@ -25,13 +26,13 @@ public class Movie extends RealmObject {
     private Boolean video;
     @SerializedName("vote_average")
     @Expose
-    private Float voteAverage;
+    private Double voteAverage;
     @SerializedName("title")
     @Expose
     private String title;
     @SerializedName("popularity")
     @Expose
-    private Float popularity;
+    private Double popularity;
     @SerializedName("poster_path")
     @Expose
     private String posterPath;
@@ -43,7 +44,8 @@ public class Movie extends RealmObject {
     private String originalTitle;
     @SerializedName("genre_ids")
     @Expose
-    private RealmList<RealmInteger> genreIds;
+    @Ignore
+    private List<Integer> genreIds = null;
     @SerializedName("backdrop_path")
     @Expose
     private String backdropPath;
@@ -56,10 +58,6 @@ public class Movie extends RealmObject {
     @SerializedName("release_date")
     @Expose
     private String releaseDate;
-
-    public Movie() {
-        genreIds = null;
-    }
 
     public Integer getVoteCount() {
         return voteCount;
@@ -85,11 +83,11 @@ public class Movie extends RealmObject {
         this.video = video;
     }
 
-    public Float getVoteAverage() {
+    public Double getVoteAverage() {
         return voteAverage;
     }
 
-    public void setVoteAverage(Float voteAverage) {
+    public void setVoteAverage(Double voteAverage) {
         this.voteAverage = voteAverage;
     }
 
@@ -101,11 +99,11 @@ public class Movie extends RealmObject {
         this.title = title;
     }
 
-    public Float getPopularity() {
+    public Double getPopularity() {
         return popularity;
     }
 
-    public void setPopularity(Float popularity) {
+    public void setPopularity(Double popularity) {
         this.popularity = popularity;
     }
 
@@ -133,11 +131,11 @@ public class Movie extends RealmObject {
         this.originalTitle = originalTitle;
     }
 
-    public RealmList<RealmInteger> getGenreIds() {
+    public List<Integer> getGenreIds() {
         return genreIds;
     }
 
-    public void setGenreIds(RealmList<RealmInteger> genreIds) {
+    public void setGenreIds(List<Integer> genreIds) {
         this.genreIds = genreIds;
     }
 
