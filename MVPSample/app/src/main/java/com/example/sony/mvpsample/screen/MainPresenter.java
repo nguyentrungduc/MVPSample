@@ -31,7 +31,7 @@ public class MainPresenter implements MainContract.Presenter{
 
     @Override
     public void setView(MainContract.View view) {
-
+            mview = view;
     }
 
     @Override
@@ -68,7 +68,7 @@ public class MainPresenter implements MainContract.Presenter{
 
                     @Override
                     public void onNext(List<Movie> movies) {
-                        Log.d(TAG, movies.toString());
+
                         Log.d(TAG, "onNext");
                         mview.onGetMoviceSuccess(movies);
                         Log.d(TAG,movies.toString()+"jojo");

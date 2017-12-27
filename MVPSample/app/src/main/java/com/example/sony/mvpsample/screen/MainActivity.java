@@ -51,9 +51,9 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @Override
     public void onGetMoviceSuccess(List<Movie> movies) {
+        Log.d(TAG, movies.toString());
         MovieAdapter movieAdapter = new MovieAdapter(getApplicationContext(), movies);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        recyclerView.addItemDecoration(new DividerItemDecoration(getApplicationContext(),DividerItemDecoration.VERTICAL));
         recyclerView.setAdapter(movieAdapter);
     }
 
