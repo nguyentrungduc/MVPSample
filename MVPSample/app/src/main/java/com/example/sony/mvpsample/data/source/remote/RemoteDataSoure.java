@@ -14,7 +14,7 @@ import rx.functions.Func1;
  * Created by Sony on 12/22/2017.
  */
 
-public class RemoteDataSoure extends BaseRemoteDataSource implements DataSource.UserRemoteDataSource {
+public class RemoteDataSoure extends BaseRemoteDataSource implements DataSource.MovieRemoteDataSource {
     public RemoteDataSoure(MovieApi movieApi) {
         super(movieApi);
     }

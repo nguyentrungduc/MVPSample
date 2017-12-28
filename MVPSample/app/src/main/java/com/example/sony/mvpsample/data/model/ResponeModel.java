@@ -12,6 +12,8 @@ import io.realm.RealmObject;
  */
 
 public class ResponeModel{
+
+
     @SerializedName("page")
     @Expose
     private Integer page;
