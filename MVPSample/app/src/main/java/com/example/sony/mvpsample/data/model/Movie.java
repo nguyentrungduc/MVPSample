@@ -1,7 +1,13 @@
 package com.example.sony.mvpsample.data.model;
 
+import android.databinding.BindingAdapter;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.NonNull;
+import android.widget.ImageView;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -169,6 +175,14 @@ public class Movie extends RealmObject {
 
     public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    @BindingAdapter({"bind:imageUrl", "bind:error"})
+    public static void loadImage(ImageView view, String url,@NonNull Drawable error ){
+        Picasso.with(view.getContext())
+                .load(url)
+                .error(error)
+                .into(view);
     }
 
     @Override

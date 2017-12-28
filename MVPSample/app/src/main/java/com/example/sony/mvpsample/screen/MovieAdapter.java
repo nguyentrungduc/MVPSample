@@ -22,23 +22,15 @@ import java.util.List;
 
 public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     List<Movie> movieList = new ArrayList<>();
-    public static final String TAG = MovieAdapter.class.toString();
+    private static final String TAG = MovieAdapter.class.toString();
     Context context;
 
 
-    public MovieAdapter(Context applicationContext, List<Movie> movies){
+    public MovieAdapter(Context context, List<Movie> movieList){
         this.movieList = movieList;
         this.context = context;
+        Log.d(TAG, "contrustor adapter");
     }
-
-    public MovieAdapter(RecyclerView recyclerView, List<Movie> movieList, Context context){
-
-
-        Log.d(TAG, "aaa");
-
-    }
-
-
 
 
 

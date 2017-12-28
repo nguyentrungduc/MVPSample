@@ -25,7 +25,7 @@ public class MainPresenter implements MainContract.Presenter{
     private MainContract.View mview;
     public final String TAG = MainPresenter.class.toString();
 
-    public MainPresenter(@NonNull MovieRepository movieRepository) {
+    public MainPresenter(MovieRepository movieRepository) {
         this.movieRepository = movieRepository;
     }
 
@@ -50,7 +50,8 @@ public class MainPresenter implements MainContract.Presenter{
         MovieRepositoryimpl movieRepositoryimpl = new MovieRepositoryimpl(null,
                 new RemoteDataSoure(MovieServiceClient.getInstance()));
 
-        movieRepositoryimpl.searchPopularMovie(Constant.API_KEY_V3, Constant.LANGUAGE, "1").subscribeOn(Schedulers.io())
+        movieRepositoryimpl.searchPopularMovie(Constant.API_KEY_V3, Constant.LANGUAGE, "1")
+                .subscribeOn(Schedulers.io())
                 .observeOn(rx.android.schedulers.AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<List<Movie>>() {
                     @Override
@@ -71,7 +72,8 @@ public class MainPresenter implements MainContract.Presenter{
 
                         Log.d(TAG, "onNext");
                         mview.onGetMoviceSuccess(movies);
-                        Log.d(TAG,movies.toString()+"jojo");
+                        Log.d(TAG,"aaa"+ movies.toString());
+
 
 
                     }
